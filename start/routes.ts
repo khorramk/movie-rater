@@ -9,12 +9,14 @@
 
 import router from '@adonisjs/core/services/router'
 import { middleware } from './kernel.js'
+const MovieRatersController = () => import('#controllers/movie_raters_controller')
 const LoginController = () => import('#controllers/login_controller')
 const RegisterController = () => import('#controllers/registers_controller')
-
 router.get('/login', ({ view }) => {
   return view.render('pages/login')
 })
+
+router.post('review-movie', [MovieRatersController, 'store']).as('review')
 
 router.get('/', ({ view }) => {
   return view.render('pages/register')
