@@ -35,6 +35,8 @@ export default class MovieRatersController {
       await movieScene?.move(app.makePath('uploads'), {
         name: `${filename}.${movieScene.extname}`,
       })
+
+      response.redirect().toRoute('upload-successfull')
     } catch (error) {
       throw error
     }
