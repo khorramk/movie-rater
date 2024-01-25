@@ -1,6 +1,6 @@
 import User from '#models/user'
 import { HttpContext } from '@adonisjs/core/http'
-import logger from '@adonisjs/core/services/logger'
+// import logger from '@adonisjs/core/services/logger'
 
 export default class LoginController {
   async store({ request, auth, response }: HttpContext) {
@@ -8,7 +8,7 @@ export default class LoginController {
     // /**
     //  * Step 1: Get credentials from request body
     //  */
-    const { email, password, fullName } = request.only(['email', 'password', 'fullName'])
+    const { email, password } = request.only(['email', 'password'])
 
     // logger.info({ email: email, password: password }, 'info')
     // /**
