@@ -31,3 +31,10 @@ router
   })
   .as('dashboard')
   .use(middleware.auth())
+
+router
+  .get('review-submittted', ({ view }) => {
+    return view.render('pages/review-submitted')
+  })
+  .as('upload-successfull')
+  .use(middleware.auth())
